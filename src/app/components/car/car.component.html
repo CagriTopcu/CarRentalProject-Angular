@@ -1,0 +1,28 @@
+<body class="bg-light">
+  <app-navi></app-navi>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-2">
+        <app-brand></app-brand>
+        <hr>
+        <app-color></app-color>
+      </div>
+      <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-2"  *ngFor="let car of cars">
+            <div class="card" style="width: 100%;">
+              <div class="card-body">
+                <h5 class="card-title">{{car.carName}}</h5>
+                <p class="card-text">{{car.description}}</p>
+                <p class="card-text">{{car.brandName}}</p>
+                <p class="card-text"><span style="font-weight:bold;">Yıl:</span> {{car.modelYear}}</p>
+                <p class="card-text"><span style="font-weight:bold;">Günlük Fiyat:</span> {{car.dailyPrice}} ₺</p>
+                <a href="#" class="btn btn-primary w-100">Kirala</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
