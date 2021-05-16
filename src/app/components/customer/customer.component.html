@@ -1,0 +1,19 @@
+<body class="bg-light">
+  <app-navbar></app-navbar>
+  <div class="container mt-2">
+    <table class="table table-bordered text-center">
+      <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Company Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{customer.userId}}</td>
+        <td>{{customer.companyName}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
