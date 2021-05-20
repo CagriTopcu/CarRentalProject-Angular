@@ -11,6 +11,9 @@ import { CarComponent } from './components/car/car.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { NavbarComponent } from './components/admin-panel/navbar/navbar.component';
 import { RentalComponent } from './components/rental/rental.component';
+import {FormsModule} from '@angular/forms';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarImageComponent } from './components/car-image/car-image.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,16 @@ import { RentalComponent } from './components/rental/rental.component';
     CarComponent,
     CustomerComponent,
     NavbarComponent,
-    RentalComponent
+    RentalComponent,
+    CarDetailComponent,
+    CarImageComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

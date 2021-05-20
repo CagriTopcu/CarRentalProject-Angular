@@ -1,4 +1,15 @@
-<select class="form-select">
-  <option selected>Bir araç seçin</option>
-  <option *ngFor="let brand of brands">{{brand.name}}</option>
-</select>
+<div class="dropdown">
+  <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    Marka seçiniz
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li>
+      <a
+        *ngFor="let brand of brands"
+        routerLink="/cars/brands/{{brand.id}}"
+        (click)="setCurrentBrand(brand)"
+        class="dropdown-item">{{brand.name}}</a>
+    </li>
+  </ul>
+</div>

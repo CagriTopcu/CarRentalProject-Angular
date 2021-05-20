@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Car ID</th>
+        <th>Car Image</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carImage of carImages">
+        <td>{{carImage.id}}</td>
+        <td>{{carImage.carId}}</td>
+        <td><img style="height:40px; width:120px;" src="{{baseUrl}}{{carImage.imagePath}}"></td>
+        <td>{{carImage.date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

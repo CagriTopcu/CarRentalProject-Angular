@@ -10,10 +10,11 @@ import {BrandService} from '../../services/brand.service';
 export class BrandComponent implements OnInit {
 
   brands:Brand[] = [];
+  currentBrand: Brand = { id : 0, name : ""};
   constructor(private brandService:BrandService) { }
 
   ngOnInit(): void {
-    this.getBrands();
+    this.getBrands()
   }
 
   getBrands(){
@@ -22,4 +23,7 @@ export class BrandComponent implements OnInit {
     })
   }
 
+  setCurrentBrand(brand:Brand){
+    this.currentBrand = brand;
+  }
 }
