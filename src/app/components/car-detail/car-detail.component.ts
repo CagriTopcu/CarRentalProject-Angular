@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {CarService} from '../../services/car.service';
 import {CarDetailDto} from '../../models/carDetailDto';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CarImageService} from '../../services/car-image.service';
+import {RentalService} from '../../services/rental.service';
+import {RentalDetailDto} from '../../models/rentalDetailDto';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-car-detail',
@@ -13,7 +16,14 @@ export class CarDetailComponent implements OnInit {
 
   baseUrl = "https://localhost:44387";
   cars:CarDetailDto[] = [];
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute, private carImageService:CarImageService) { }
+  rentalDetail:RentalDetailDto[];
+
+  constructor(private carService:CarService,
+              private activatedRoute:ActivatedRoute,
+              private carImageService:CarImageService,
+              private rentalService:RentalService,
+              private toastrService:ToastrService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -27,5 +37,9 @@ export class CarDetailComponent implements OnInit {
     this.carService.getCarById(id).subscribe(response => {
       this.cars[0] = response.data[0];
     })
+  }
+
+  makePayment(carId:number){
+    this.router.navigate(['/payment/'+carId]);
   }
 }

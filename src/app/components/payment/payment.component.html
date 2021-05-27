@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <div class="card text-center">
+    <div class="card-header">
+      Ödeme Bilgileri
+    </div>
+
+    <div class="card-body" *ngFor="let car of carDetails">
+      <p class="card-text"><img src="{{baseUrl}}{{car.imagePath}}"></p>
+      <p class="card-text"><span class="fw-bold">Araba adı:</span> {{car.carName}}</p>
+      <p class="card-text"><span class="fw-bold">Marka:</span> {{car.brandName}}</p>
+      <p class="card-text"><span class="fw-bold">Yıl:</span> {{car.modelYear}}</p>
+      <p class="card-text"><span class="fw-bold">Renk:</span> {{car.colorName}}</p>
+
+      <div class="card-text">
+        <p class="card-text">Kiralanma Tarihi</p>
+        <input type="date" class="form-control w-25 mx-auto mb-2" [(ngModel)]="rentDate">
+      </div>
+
+      <div class="card-text">
+        <p class="card-text">İade Tarihi</p>
+        <input type="date" class="form-control w-25 mx-auto mb-2" [(ngModel)]="returnDate">
+      </div>
+
+      <a class="btn btn-primary" (click)="rentCar(car.id)">Kirala</a>
+    </div>
+  </div>
+</div>

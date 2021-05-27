@@ -14,6 +14,7 @@ export class CarComponent implements OnInit {
   baseUrl = "https://localhost:44387";
   cars:CarDetailDto[] = [];
   car:CarDetailDto = { id:0, carName:"", colorId:0, brandName:"", brandId:0, colorName:"", dailyPrice:0, description:"", modelYear:0, imagePath: ""};
+  filteredText = "";
   constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {

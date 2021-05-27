@@ -21,7 +21,7 @@ export class CarService {
   }
 
   getCarsByColor(colorId:number):Observable<ListResponseModel<CarDetailDto>>{
-    return this.httpClient.get<ListResponseModel<CarDetailDto>>(this.apiUrl+"cars/getcarsbycolorid?id="+colorId);
+    return this.httpClient.get<ListResponseModel<CarDetailDto>>(this.apiUrl+"cars/getcarsbycolorid?colorId="+colorId);
   }
 
   getCarById(id:number):Observable<ListResponseModel<CarDetailDto>>{

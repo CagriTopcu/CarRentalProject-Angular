@@ -9,7 +9,8 @@ import {RentalService} from '../../services/rental.service';
 })
 export class RentalComponent implements OnInit {
 
-  rentals:RentalDetailDto[] = [];
+  rentals:RentalDetailDto[];
+
   constructor(private rentalService:RentalService) { }
 
   ngOnInit(): void {
@@ -21,5 +22,7 @@ export class RentalComponent implements OnInit {
       this.rentals = response.data;
     })
   }
+
+
 
 }
